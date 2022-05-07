@@ -7,7 +7,7 @@ module.exports = {
     // You can overwrite values here that are used for the SEO component
     // You can also add new values here to query them like usual
     // See all options: https://github.com/LekoArts/gatsby-themes/blob/main/themes/gatsby-theme-minimal-blog/gatsby-config.js
-    siteTitle: `Minimal Blog`,
+    siteTitle: `Aaron Zomback`,
     siteTitleAlt: `Minimal Blog - Gatsby Theme`,
     siteHeadline: `Minimal Blog - Gatsby Theme from @lekoarts`,
     siteUrl: `https://minimal-blog.lekoarts.de`,
@@ -16,19 +16,32 @@ module.exports = {
     siteImage: `/banner.jpg`,
     author: `@lekoarts_de`,
   },
-  plugins: [
+  plugins: [  
+    `gatsby-plugin-netlify-cms`,
     {
       resolve: `@lekoarts/gatsby-theme-minimal-blog`,
       // See the theme's README for all available options
       options: {
         navigation: [
           {
-            title: `Blog`,
+            title: `Dailies`,
             slug: `/blog`,
           },
           {
-            title: `About`,
-            slug: `/about`,
+            title: `Films`,
+            slug: `/films`,
+          },
+          {
+            title: `Photography`,
+            slug: `/photography`,
+          },
+          {
+            title: `TimeSink`,
+            slug: `/timesink`,
+          },
+          {
+            title: `Code`,
+            slug: `/code`,
           },
         ],
         externalLinks: [
@@ -36,11 +49,16 @@ module.exports = {
             name: `Twitter`,
             url: `https://twitter.com/lekoarts_de`,
           },
-          {
-            name: `Homepage`,
-            url: `https://www.lekoarts.de?utm_source=minimal-blog&utm_medium=Starter`,
-          },
+
         ],
+      },
+    },
+    {
+      resolve: `gatsby-plugin-theme-ui`,
+      options: {
+          fonts: {
+    body: 'Cormorant, sans-serif',
+  },
       },
     },
     {
@@ -52,8 +70,8 @@ module.exports = {
         // See: https://github.com/LekoArts/gatsby-themes/tree/main/examples/minimal-blog#changing-your-fonts
         web: [
           {
-            name: `IBM Plex Sans`,
-            file: `https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap`,
+            name: `Cormorant`,
+            file: `https://fonts.googleapis.com/css2?family=Cormorant&display=swap`,
           },
         ],
       },
